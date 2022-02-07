@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,7 @@ SECRET_KEY = '*wr#m6-p@t)-l3n++fkjksvk7lc11qsfphu6avv))wr+(jhfc6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['alinamandjo-budget-app.herokuapp.com']
+ALLOWED_HOSTS = ['alinamandjo-budget.herokuapp.com']
 
 # Application definition
 
@@ -44,7 +45,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,17 +74,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'budget.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'budget_db',
+#         'USER': os.environ.get('DB_USER', ''),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'budget_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Bore_2010',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dcvksrelkoebeu',
+        'USER': 'frbgsdokznjzgz',
+        'PASSWORD': '5f5981bf9bf9bb37f210a8067be84bd284a7a02ca20c140992def65ecf05ef93',
+        'HOST': 'ec2-54-209-221-231.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -122,13 +130,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
