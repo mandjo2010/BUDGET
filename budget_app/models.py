@@ -42,14 +42,15 @@ class Expense(models.Model):
         (10, "Clothing"),
         (11, "Health"),
         (12, "Alcohol"),
-        (13, "Cigarettes"),
-        (14, "Taxes"),
-        (15, "Accomodation"),
-        (16, "Home"),
-        (17, "Electronics"),
-        (18, "Sport"),
-        (19, "Culture"),
-        (20, "Other"),
+        (13, "Wine"),
+        (14, "Cigarettes"),
+        (15, "Taxes"),
+        (16, "Accomodation"),
+        (17, "Home"),
+        (18, "Electronics"),
+        (19, "Sport"),
+        (20, "Culture"),
+        (21, "Other"),
     )
 
     PAYMENT = (
