@@ -82,10 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'budget_db',
-        'USER': 'budget_user',
+        'USER': 'postgres',
         'PASSWORD': 'Bore_2010',
         'HOST': 'localhost',
-        'PORT': '',
     }
 }
 
