@@ -1,0 +1,37 @@
+{% extends 'budget_app/base.html' %}
+{% block content %}
+
+
+    <header>
+        <div id="welcome">
+            <span style="font-family:'Dancing Script',cursive;">
+                Welcome to Budget-App
+            </span>
+
+        </div>
+    </header>
+
+    <main>
+
+        <article>
+
+            <section>
+                <div class="instr">
+                    Login or register to continue</br>
+                    <a href="{% url 'login' %}">
+                        <button class= "btn btn-primary" type="submit">Login</button>
+                    </a>
+                    <a href="{% url 'signup' %}  " >
+                        <button class= "btn btn-warning" type="submit">Register</button>
+                    </a>
+
+                </div>
+            </section>
+
+        </article>
+
+    </main>
+
+{% endblock %}
+
+<!-- <a href="{% url 'budget_list' username=user.username %}">Budget list link</a> -->

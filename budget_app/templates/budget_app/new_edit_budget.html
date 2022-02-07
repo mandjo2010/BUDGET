@@ -1,0 +1,64 @@
+{% extends 'budget_app/base_top_panel.html' %}
+
+{% block bottom %}
+
+    <main>
+
+        <article>
+
+            <header>
+
+                <div id="bdt-create-head">
+                    {% if budget %}
+                        Budget editor
+                    {% else %}
+                        Budget creator
+                    {% endif %}
+                </div>
+                
+            </header>
+
+            <section>
+
+                <form method="POST">
+                    {% csrf_token %}
+            
+                    <div class="forms">
+
+                        {% if budget %}
+                            <div class="forms-l">
+                                <div><label for="name">Budget name: </label></div>
+                                <div><label for="balance">Add to balance: </label></div>
+                            </div>
+                            <div class="forms-r">
+                                <div><input type="text" name="name" id="name" value="{{ budget.name }}"></div>
+                                <div><input type="number" name="balance" id="balance" step=0.01></div>
+                            </div>
+                            <div style="clear:both"></div>
+    
+                            <button class="btn btn-success" type="submit">Edit</button>
+                        {% else %}
+                            <div class="forms-l">
+                                <div><label for="name">Budget name: </label></div>
+                                <div><label for="balance">Add to balance: </label></div>
+                            </div>
+                            <div class="forms-r">
+                                <div><input type="text" name="name" id="name" placeholder="{{ budget.name }}"></div>
+                                <div><input type="number" name="balance" id="balance" step=0.01></div>
+                            </div>
+                            <div style="clear:both"></div>
+    
+                            <button class="btn btn-success" type="submit">Create</button>
+                        {% endif %}
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </article>
+
+    </main>
+
+{% endblock %}

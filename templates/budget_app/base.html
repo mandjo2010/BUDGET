@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="utf-8" />
+	<title>Budget</title>
+	<meta name="description" content="Budget tracking application made in Django." />
+	<meta name="keywords" content="Django, project, Python, backend, frontend, framework, programming"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'budget_app/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontello/css/fontello.css' %}">
+
+</head>
+
+<body>
+
+    <div id="container">
+              
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+
+    <footer>
+
+        <div id="info">
+                    <p>Copyright &copy;Boré M. {% now "Y" %}</p>
+        </div>
+        
+    </footer>
+
+</body>
+
+</html>

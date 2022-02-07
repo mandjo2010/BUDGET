@@ -1,0 +1,29 @@
+{% extends 'budget_app/base.html' %}
+
+{% block content %}
+
+    <header>
+
+        <div id="reg-head">
+            Registration form:
+        </div>
+        
+    </header>
+
+    <main>
+
+        <article>
+
+            <div class="reg-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-warning pull-right" type="submit">Register</button>
+                </form>
+            </div>
+
+        </article>
+
+    </main>
+
+{% endblock %}
