@@ -50,7 +50,9 @@ class Expense(models.Model):
         (18, "Electronics"),
         (19, "Sport"),
         (20, "Culture"),
-        (21, "Other"),
+        (21, "Investment"),
+        (22, "Other"),
+
     )
 
     PAYMENT = (
